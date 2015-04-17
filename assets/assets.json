@@ -1,0 +1,28 @@
+{
+  "client": [
+    "client/config.js",
+    "client/app.js",
+    "client/modules/**/*.js"
+  ],
+  "images": [
+    "assets/images/**/*"
+  ],
+  "sass": [
+    "assets/sass/**/*.scss"
+  ],
+  "vendor": {
+    "css": [
+      "assets/vendor/bootstrap/dist/css/bootstrap.css",
+      "assets/vendor/fontawesome/css/font-awesome.css",
+    ],
+    "js": [
+      "assets/vendor/angular/angular.js",
+      "assets/vendor/angular-animate/angular-animate.js",
+      "assets/vendor/angular-messages/angular-messages.js",
+      "assets/vendor/restangular/dist/restangular.js",
+    ],
+    "fonts": [
+      "assets/vendor/fontawesome/fonts/*.*"
+    ]
+  }
+}

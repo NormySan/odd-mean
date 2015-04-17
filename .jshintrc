@@ -1,0 +1,33 @@
+{
+  "node": true,
+  "browser": true,
+  "esnext": true,
+  "bitwise": false,
+  "camelcase": false,
+  "curly": false,
+  "eqeqeq": true,
+  "immed": true,
+  "indent": 2,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "quotmark": "single",
+  "regexp": true,
+  "undef": true,
+  "unused": false,
+  "strict": true,
+  "trailing": true,
+  "smarttabs": true,
+  "globals": {
+    "_": true,
+    "__modules": true,
+    "__server": true,
+    "__base": true,
+    "angular": true,
+    "AppConfig": true,
+    "confirm": true,
+    "google": true,
+    "moment": true
+  },
+  "indent": 2
+}
