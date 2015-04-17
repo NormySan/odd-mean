@@ -1,4 +1,4 @@
-Paax System (system.paax.se)
+Odd Mean
 ==============
 
-This is the administration app for paax.se.
+MEAN stack developed by Odd Hill.
