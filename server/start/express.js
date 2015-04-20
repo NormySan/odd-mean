@@ -3,6 +3,7 @@
 /**
  * Require dependencies.
  */
+var assetmanager  = require('assetmanager');
 var bodyParser    = require('body-parser');
 var cookieParser  = require('cookie-parser');
 var express       = require('express');
@@ -42,10 +43,16 @@ var loadRoutes = function(app) {
 module.exports = function() {
   var app = express();
 
+  // Load assets.
+  app.locals.assets = assetmanager.process({
+    assets: require(__base + 'client/assets/assets.json'),
+    debug: (process.env.NODE_ENV !== 'production'),
+    webroot: 'public'
+  });
+
   // Set the rendering engine for html files to ejs, also set the
   // views path for server side html pages.
   app.engine('html', swig.renderFile);
-
   app.set('view engine', 'html');
   app.set('views', __server + 'views');
 
@@ -81,7 +88,6 @@ module.exports = function() {
   if (process.env.NODE_ENV === 'development') {
     app.use('/client', serveStatic(__base + 'client'));
     app.use('/partials', serveStatic(__base + 'client/partials'));
-    app.use('/assets', serveStatic(__base + 'assets'));
   }
 
   // Load route files.
