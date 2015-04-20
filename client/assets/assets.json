@@ -1,0 +1,26 @@
+{
+  "default": {
+    "css": {
+      "public/assets/css/vendor.min.css": [
+        "client/assets/vendor/bootstrap/dist/css/bootstrap.css",
+        "client/assets/vendor/fontawesome/css/font-awesome.css"
+      ],
+      "public/assets/css/client.min.css": [
+        "public/assets/css/main.css"
+      ]
+    },
+    "js": {
+      "public/assets/js/vendor.min.js": [
+        "assets/vendor/angular/angular.js",
+        "assets/vendor/angular-animate/angular-animate.js",
+        "assets/vendor/angular-messages/angular-messages.js",
+        "assets/vendor/restangular/dist/restangular.js"
+      ],
+      "public/assets/js/client.min.js": [
+        "client/config.js",
+        "client/app.js",
+        "client/modules/**/*.js"
+      ]
+    }
+  }
+}
