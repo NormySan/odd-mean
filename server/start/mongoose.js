@@ -1,16 +1,12 @@
 'use strict';
 
 /**
- * Load config.
+ * Require dependencies.
  */
-var config = require(__server + 'config');
-
-/**
- * Dependencies.
- */
-var fs = require('fs');
-var glob = require('glob');
-var mongoose = require('mongoose');
+var config    = require('config');
+var fs        = require('fs');
+var glob       = require('glob');
+var mongoose  = require('mongoose');
 
 /**
  * Loads the mongoose models.
@@ -39,7 +35,7 @@ var loadExtensions = function() {
  * Configure mongoose.
  */
 module.exports = function() {
-  var mongo = config.database.mongodb;
+  var mongo = config.mongodb;
 
   // Base URI with host and port.
   var uri = mongo.host + ':' + mongo.port + '/' + mongo.database;
