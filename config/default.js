@@ -18,8 +18,8 @@ module.exports = {
   mongodb: {
     database: 'odd-mean',
     host: '127.0.0.1',
-    port: 27017
-  }
+    port: 17017
+  },
 
   // Mandrill.
   mandrill: {
@@ -27,7 +27,7 @@ module.exports = {
     port: 587,
     username: '',
     key: ''
-  }
+  },
 
   // Redis cache.
   redis: {
