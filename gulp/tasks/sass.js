@@ -6,7 +6,7 @@ var sass        = require('gulp-sass');
 /**
  * Compile sass files into a css file.
  */
-gulp.task('sass', ['clean'], function() {
+gulp.task('sass', ['clean:css'], function() {
   return gulp.src('./client/assets/sass/*.scss')
     .pipe(sass({
       includePaths: ['styles'].concat(neat),

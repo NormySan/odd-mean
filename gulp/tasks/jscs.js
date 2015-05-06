@@ -1,16 +1,14 @@
 var cache   = require('gulp-cached');
 var gulp    = require('gulp');
-var jshint  = require('gulp-jshint');
-var stylish = require('jshint-stylish');
+var jscs  = require('gulp-jscs');
 
 /**
  * Jshint task.
  */
-gulp.task('jshint', function() {
+gulp.task('jscs', function() {
   var scripts = ['./server.js', './client/**/*.js', './server/**/*.js', '!./client/assets/vendor/**/*'];
 
   return gulp.src(scripts)
-    .pipe(cache('linting'))
-    .pipe(jshint())
-    .pipe(jshint.reporter(stylish));
+    .pipe(cache('jscs'))
+    .pipe(jscs());
 });

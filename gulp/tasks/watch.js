@@ -1,4 +1,5 @@
-var gulp = require('gulp');
+var config  = require('../config');
+var gulp    = require('gulp');
 
 /**
  * Watch task.
@@ -6,7 +7,9 @@ var gulp = require('gulp');
 gulp.task('watch', function() {
   var scripts = ['./server.js', './client/**/*.js', './server/**/*.js'];
   var styles = ['./client/assets/sass/**/*.scss'];
+  var tests = ['./tests/**/*.js'];
 
   gulp.watch(scripts, ['jshint']);
   gulp.watch(styles, ['sass']);
+  gulp.watch(config.paths.images.src, ['images']);
 });
