@@ -1,0 +1,16 @@
+{
+  "fileExtensions": [ ".js", "jscs" ],
+
+  "requireParenthesesAroundIIFE": true,
+  "maximumLineLength": 120,
+  "validateLineBreaks": "LF",
+  "validateIndentation": 2,
+
+  "disallowSpacesInsideObjectBrackets": null,
+
+  "safeContextKeyword": "self",
+
+  "excludeFiles": [
+    "tests/**"
+  ]
+}
