@@ -8,10 +8,17 @@
  */
 module.exports = {
 
+  debug: false,
+
   // Server configuration.
   app: {
     name: 'Odd Mean',
     port: 9000
+  },
+
+  session: {
+    secret: 'J82&kL1/zbtjd%&=0fGhJ#Kl',
+    collection: 'sessions'
   },
 
   // Mongo DB.
