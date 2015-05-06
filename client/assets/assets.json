@@ -11,15 +11,20 @@
     },
     "js": {
       "public/assets/js/vendor.min.js": [
-        "assets/vendor/angular/angular.js",
-        "assets/vendor/angular-animate/angular-animate.js",
-        "assets/vendor/angular-messages/angular-messages.js",
-        "assets/vendor/restangular/dist/restangular.js"
+        "client/assets/vendor/lodash/lodash.js",
+        "client/assets/vendor/angular/angular.js",
+        "client/assets/vendor/angular-animate/angular-animate.js",
+        "client/assets/vendor/angular-messages/angular-messages.js",
+        "client/assets/vendor/angular-sanitize/angular-sanitize.js",
+        "client/assets/vendor/angular-bootstrap/ui-bootstrap-tpls.js",
+        "client/assets/vendor/restangular/dist/restangular.js",
+        "client/assets/vendor/angular-ui-router/release/angular-ui-router.js"
       ],
       "public/assets/js/client.min.js": [
         "client/config.js",
         "client/app.js",
-        "client/modules/**/*.js"
+        "client/modules/*/*.js",
+        "client/modules/*/**/*.js"
       ]
     }
   }
