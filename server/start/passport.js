@@ -43,14 +43,6 @@ module.exports = function() {
           });
         }
 
-        // If the user is suspended we do not want to log the user in.
-        if (user.suspended) {
-          return done(null, false, {
-            message: 'You\'r account has been suspended.',
-            status: 'account suspended'
-          });
-        }
-
         // Check if passwords match.
         user.authenticate(password, function(err, match) {
           if (err) return done(err);
