@@ -5,26 +5,53 @@
  */
 var mongoose    = require('mongoose');
 var Schema      = mongoose.Schema;
+var shortid     = require('shortid');
+var slug        = require('slug');
 var timestamps  = require('mongoose-timestamp');
 
 /**
  * Article Schema.
  */
 var ArticleSchema = new Schema({
+  shortid: {
+    type: String,
+    unique: true
+  },
+  slug: {
+    type: String
+  },
   title: {
     type: String,
     trim: true,
     required: true
   },
-  content: {
+  body: {
     type: String,
     default: '',
     trim: true
   },
-  created_by: {
+  author: {
     type: Schema.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: true
   }
+});
+
+// Generate a slug and shortid on save.
+ArticleSchema.pre('save', function (next) {
+
+  // If no shortid is set generate one.
+  if (!this.shortid) {
+    this.shortid = shortid.generate();
+  }
+
+
+  // Generate a slug if the title has changed.
+  if (this.isModified('title')) {
+    this.slug = slug(this.title).toLowerCase();
+  }
+
+  next();
 });
 
 /**
@@ -35,4 +62,7 @@ ArticleSchema.plugin(timestamps, {
   updatedAt: 'updated_at'
 });
 
-mongoose.model('Article', ArticleSchema);
+/**
+ * Register model with mongoose.
+ */
+module.exports = mongoose.model('Article', ArticleSchema);

@@ -20,7 +20,8 @@ var UserSchema = new Schema({
   password: {
     type: String,
     select: false,
-    required: true
+    required: true,
+    minlength: 6
   },
   name: {
     type: String,
@@ -64,4 +65,7 @@ UserSchema.methods.authenticate = function(password, callback) {
   });
 };
 
-mongoose.model('User', UserSchema);
+/**
+ * Register model with mongoose.
+ */
+module.exports = mongoose.model('User', UserSchema);
