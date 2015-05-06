@@ -5,6 +5,7 @@
  */
 var assetmanager  = require('assetmanager');
 var bodyParser    = require('body-parser');
+var config        = require('config');
 var cookieParser  = require('cookie-parser');
 var express       = require('express');
 var favicon       = require('serve-favicon');
@@ -64,10 +65,10 @@ module.exports = function() {
 
   // Express/Mongo DB session storage.
   app.use(session({
-    secret: 'J82&kL1/zbtjd%&=0fGhJ#Kl',
+    secret: config.session.secret,
     store: new mongoStore({
       mongooseConnection: mongoose.connection,
-      collection: 'sessions'
+      collection: config.session.collection
     }),
     resave: true,
     saveUninitialized: true
@@ -87,7 +88,7 @@ module.exports = function() {
   // development mode.
   if (process.env.NODE_ENV === 'development') {
     app.use('/client', serveStatic(__base + 'client'));
-    app.use('/partials', serveStatic(__base + 'client/partials'));
+    app.use('/modules', serveStatic(__base + 'client/modules'));
   }
 
   // Load route files.
