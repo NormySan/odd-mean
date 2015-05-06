@@ -8,7 +8,7 @@
 @import "neat";
 
 // Import global variables.
-@import "variables", "typography";
+@import "variables";
 
 // Import stylesheets.
-@import "general";
+@import "general", "typography", "forms";
