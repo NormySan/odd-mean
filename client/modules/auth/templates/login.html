@@ -1,0 +1,21 @@
+<div class="panel panel-default panel-login">
+  <header class="panel-heading text-center">Login</header>
+  <section class="panel-body">
+    <form ng-submit="ctrl.login()">
+
+      <!-- Authentication: Email -->
+      <div class="form-group">
+        <span class="input-icon"><i class="fa fa-envelope-o"></i></span>
+        <input type="email" name="email" id="email" class="form-control" ng-model="ctrl.credentials.email" placeholder="Email" autofocus required>
+      </div>
+
+      <!-- Authentication: Password -->
+      <div class="form-group">
+        <span class="input-icon"><i class="fa fa-lock"></i></span>
+        <input type="password" name="password" id="password" class="form-control" ng-model="ctrl.credentials.password" placeholder="Password" required>
+      </div>
+
+      <button class="btn btn-block btn-default">Login</button>
+    </form>
+  </section>
+</div>

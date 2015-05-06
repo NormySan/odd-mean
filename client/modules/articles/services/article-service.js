@@ -3,7 +3,7 @@
 /**
  * @ngInject
  */
-function ArticleService(Restangular) {
+function ArticleService($http, Restangular) {
   return {
 
     /**
@@ -34,11 +34,21 @@ function ArticleService(Restangular) {
      * @return {object}
      */
     getMostRecent: function() {
-      return Restangular.all('articles').getList();
+      return Restangular.all('articles').all('recent').getList();
+    },
+
+    /**
+     * Post an article.
+     *
+     * @param  {object} article
+     * @return {object}
+     */
+    post: function(article) {
+      return Restangular.all('articles').post(article);
     }
   };
 }
 
-angular.module('odd.articles').factory(ArticleService);
+angular.module('odd.articles').factory('ArticleService', ArticleService);
 
 })();

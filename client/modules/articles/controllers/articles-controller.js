@@ -21,4 +21,6 @@ function ArticlesController(ArticleService, articles) {
   };
 }
 
+angular.module('odd.articles').controller('ArticlesController', ArticlesController);
+
 })();

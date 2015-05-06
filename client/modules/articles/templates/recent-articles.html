@@ -1,0 +1,21 @@
+<div class="page-header">
+  <div class="btn-grp pull-right">
+    <a ui-sref="articles.create" class="btn btn-default">Add article</a>
+  </div>
+  <h1>Recent articles</h1>
+</div>
+
+<div class="recent-articles">
+  <article class="article" ng-repeat="article in ctrl.articles">
+    <header class="article-header">
+      <a ui-sref="articles.show({ id: article._id })">
+        <h3 ng-bind="article.title"></h3>
+      </a>
+      <div class="details">
+        Posted by: <a href="#">{{ article.author.name }}</a>
+      </div>
+    </header>
+
+    <p class="body" ng-bind="article.body"></p>
+  </article>
+</div>
