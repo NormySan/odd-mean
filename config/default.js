@@ -8,6 +8,7 @@
  */
 module.exports = {
 
+  // When debug is set to true all requests will be logged to the console.
   debug: false,
 
   // Server configuration.
@@ -16,6 +17,12 @@ module.exports = {
     port: 9000
   },
 
+  // Cookie configuration.
+  cookie: {
+    secret: '=oASDkjdn1%53&L%#!asKAInz'
+  },
+
+  // Session configuration.
   session: {
     secret: 'J82&kL1/zbtjd%&=0fGhJ#Kl',
     collection: 'sessions'
