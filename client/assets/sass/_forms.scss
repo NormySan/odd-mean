@@ -1,19 +1,18 @@
-/**
- * @file Forms.
- */
+// Variables
+$input-icon-border-color: #d7d7d7;
 
 .form-group {
   position: relative;
 }
 
 .input-icon {
-  border-right: 1px solid #d7d7d7;
+  border-right: 1px solid $input-icon-border-color;
+  left: 0;
   line-height: 22px;
   margin: 6px 10px 6px 0;
   position: absolute;
   text-align: center;
   top: 0;
-  left: 0;
   width: 36px;
 
   + .form-control {
