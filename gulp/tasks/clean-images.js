@@ -6,5 +6,5 @@ var gulp    = require('gulp');
  * Clean images task.
  */
 gulp.task('clean:images', function(callback) {
-  del(config.paths.images.dest, callback);
+  del(config.assets.images.dest, callback);
 });

@@ -1,9 +1,17 @@
-
 /**
  * Gulp configuration.
  */
 module.exports = {
-  paths: {
+  sass: [
+    './client/assets/sass/*.scss'
+  ],
+  scripts: [
+    './server.js',
+    './client/**/*.js',
+    './server/**/*.js',
+    '!./client/assets/vendor/**/*'
+  ],
+  assets: {
     css: {
       dest: './public/assets/css'
     },

@@ -1,14 +1,13 @@
 var cache   = require('gulp-cached');
+var config  = require('../config');
 var gulp    = require('gulp');
-var jscs  = require('gulp-jscs');
+var jscs    = require('gulp-jscs');
 
 /**
  * Jshint task.
  */
 gulp.task('jscs', function() {
-  var scripts = ['./server.js', './client/**/*.js', './server/**/*.js', '!./client/assets/vendor/**/*'];
-
-  return gulp.src(scripts)
+  return gulp.src(config.scripts)
     .pipe(cache('jscs'))
     .pipe(jscs());
 });

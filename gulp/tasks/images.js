@@ -7,8 +7,8 @@ var imagemin  = require('gulp-imagemin');
  * Move and minify images.
  */
 gulp.task('images', ['clean:images'], function() {
-  return gulp.src(config.paths.images.src)
+  return gulp.src(config.assets.images.src)
     .pipe(cache('imagemin'))
     .pipe(imagemin())
-    .pipe(gulp.dest(config.paths.images.dest));
+    .pipe(gulp.dest(config.assets.images.dest));
 });

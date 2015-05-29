@@ -6,5 +6,5 @@ var gulp    = require('gulp');
  * Clean stylesheets task.
  */
 gulp.task('clean:css', function(callback) {
-  del(config.paths.css.dest, callback);
+  del(config.assets.css.dest, callback);
 });

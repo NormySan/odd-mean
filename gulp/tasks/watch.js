@@ -5,11 +5,9 @@ var gulp    = require('gulp');
  * Watch task.
  */
 gulp.task('watch', function() {
-  var scripts = ['./server.js', './client/**/*.js', './server/**/*.js'];
-  var styles = ['./client/assets/sass/**/*.scss'];
   var tests = ['./tests/**/*.js'];
 
-  gulp.watch(scripts, ['jshint']);
-  gulp.watch(styles, ['sass']);
-  gulp.watch(config.paths.images.src, ['images']);
+  gulp.watch(config.scripts, ['jshint']);
+  gulp.watch(config.sass.src, ['scsslint', 'sass']);
+  gulp.watch(config.assets.images.src, ['images']);
 });

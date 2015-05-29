@@ -6,5 +6,5 @@ var gulp    = require('gulp');
  * Clean fonts task.
  */
 gulp.task('clean:fonts', function(callback) {
-  del(config.paths.fonts.dest, callback);
+  del(config.assets.fonts.dest, callback);
 });
