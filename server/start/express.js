@@ -46,7 +46,7 @@ module.exports = function() {
   var app = express();
 
   // Helmet is used to secure the app by removing some common vulnerabilities.
-  app.use(hemlet());
+  app.use(helmet());
 
   // Load assets.
   app.locals.assets = assetmanager.process({
