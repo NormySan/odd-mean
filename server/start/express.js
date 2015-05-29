@@ -10,6 +10,7 @@ var cookieParser  = require('cookie-parser');
 var express       = require('express');
 var favicon       = require('serve-favicon');
 var glob          = require('glob');
+var helmet        = require('helmet');
 var mongoose      = require('mongoose');
 var passport      = require('passport');
 var serveStatic   = require('serve-static');
@@ -43,6 +44,9 @@ var loadRoutes = function(app) {
  */
 module.exports = function() {
   var app = express();
+
+  // Helmet is used to secure the app by removing some common vulnerabilities.
+  app.use(hemlet());
 
   // Load assets.
   app.locals.assets = assetmanager.process({
