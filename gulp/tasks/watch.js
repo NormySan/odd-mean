@@ -8,6 +8,6 @@ gulp.task('watch', function() {
   var tests = ['./tests/**/*.js'];
 
   gulp.watch(config.scripts, ['jshint']);
-  gulp.watch(config.sass.src, ['scsslint', 'sass']);
+  gulp.watch(config.sass, ['scss-lint', 'sass']);
   gulp.watch(config.assets.images.src, ['images']);
 });

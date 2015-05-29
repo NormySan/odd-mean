@@ -6,8 +6,8 @@ var scsslint  = require('gulp-scss-lint');
 /**
  * SCSS lint task.
  */
-gulp.task('scsslint', function() {
+gulp.task('scss-lint', function() {
   return gulp.src(config.sass)
     .pipe(cache('scsslint'))
-    .pipe(jscs());
+    .pipe(scsslint());
 });
