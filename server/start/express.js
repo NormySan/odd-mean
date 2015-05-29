@@ -12,6 +12,7 @@ var favicon       = require('serve-favicon');
 var glob          = require('glob');
 var helmet        = require('helmet');
 var mongoose      = require('mongoose');
+var morgan        = require('morgan');
 var passport      = require('passport');
 var serveStatic   = require('serve-static');
 var session       = require('express-session');
@@ -44,6 +45,11 @@ var loadRoutes = function(app) {
  */
 module.exports = function() {
   var app = express();
+
+  // If debugging is enabled log all requests to the console.
+  if (config.debug) {
+    app.use(morgan('combined'));
+  }
 
   // Helmet is used to secure the app by removing some common vulnerabilities.
   app.use(helmet());
